@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="INOVARIS — segurança digital em ambientes industriais: estratégia, vigilância e resposta para proteger operações contra ameaças digitais."
+    />
+    <meta name="theme-color" content="#0A0C0F" />
+    <title>INOVARIS | Segurança digital em ambientes industriais</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='24' fill='%230A0C0F'/%3E%3Cg stroke='%235B9BD5' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M63 13a47 47 0 1 0 0 94'/%3E%3Cpath d='M39 33c7 4 9 11 6 17-4 8 2 15 11 15'/%3E%3Cpath d='M33 71c8-2 15 1 18 8 3 6 10 9 16 7'/%3E%3Cpath d='M63 45h21v-15'/%3E%3Cpath d='M49 61h48'/%3E%3Cpath d='M55 79h21v15'/%3E%3C/g%3E%3Ccircle cx='84' cy='24' r='6' fill='%235B9BD5'/%3E%3Ccircle cx='101' cy='61' r='6.5' fill='%232E5E8C'/%3E%3Ccircle cx='76' cy='98' r='7.5' fill='%23123A5E'/%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body class="font-sans text-white antialiased">
+    <!--
+      THESIS: INOVARIS reads as an industrial control-room plaque, not a cybersecurity sci-fi banner or a generic SaaS card stack.
+      OWN-WORLD: Near-black steel ground, a single restrained blue signal, slab-serif headings, a serif body face, mono data readouts, squared plates instead of pills, hairline dividers, and procedural telemetry rendered in monochrome-blue.
+      STORY: The visitor sees the brand, recognizes five business risks, understands the detect–contain–recover cycle, learns what INOVARIS protects, and maps priorities.
+      FIRST VIEWPORT: A canvas-rendered security field and overlaid navigation occupy exactly one dynamic viewport; the INOVARIS wordmark locks into the animated field while the thesis and risk-map action anchor the lower edge.
+      FORM: Procedural monitoring field, industrial-plaque revision of the original Canvas 2D direction, seed 0c56d916.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+    -->
+    <a
+      href="#conteudo"
+      class="fixed left-4 top-4 z-[60] -translate-y-24 rounded-sm bg-cyan px-5 py-3 font-semibold text-ink transition-transform focus:translate-y-0"
+    >
+      Ir para o conteúdo
+    </a>
+
+    <header class="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/55 backdrop-blur-md">
+      <div class="site-shell flex h-20 items-center justify-between">
+        <a href="#inicio" class="group inline-flex items-center gap-3" aria-label="INOVARIS — início">
+          <span class="grid h-10 w-10 shrink-0 place-items-center transition-transform duration-300 group-hover:scale-105">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-full w-full">
+              <defs>
+                <linearGradient id="brandMarkGradient" x1="18" y1="8" x2="96" y2="112" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#8FCBEA" />
+                  <stop offset="0.55" stop-color="#5B9BD5" />
+                  <stop offset="1" stop-color="#123A5E" />
+                </linearGradient>
+              </defs>
+              <g stroke="url(#brandMarkGradient)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M63 13a47 47 0 1 0 0 94" />
+                <path d="M39 33c7 4 9 11 6 17-4 8 2 15 11 15" />
+                <path d="M33 71c8-2 15 1 18 8 3 6 10 9 16 7" />
+                <path d="M57 19l6-10M65 21l4-11M73 25l3-11" stroke-width="5" />
+                <path d="M63 45h21v-15" />
+                <path d="M49 61h48" />
+                <path d="M55 79h21v15" />
+              </g>
+              <circle cx="84" cy="24" r="5.5" fill="url(#brandMarkGradient)" />
+              <circle cx="101" cy="61" r="6" fill="url(#brandMarkGradient)" />
+              <circle cx="76" cy="98" r="7" fill="url(#brandMarkGradient)" />
+            </svg>
+          </span>
+          <span class="font-display text-lg font-semibold tracking-[0.22em]">INOVARIS</span>
+        </a>
+
+        <nav class="hidden items-center gap-8 md:flex" aria-label="Navegação principal">
+          <a class="nav-link text-sm text-mist transition-colors hover:text-cyan" href="#riscos">Riscos</a>
+          <a class="nav-link text-sm text-mist transition-colors hover:text-cyan" href="#abordagem">Como protegemos</a>
+          <a class="nav-link text-sm text-mist transition-colors hover:text-cyan" href="#sobre">INOVARIS</a>
+          <a
+            class="rounded-sm border border-cyan/50 px-5 py-2.5 text-sm font-semibold text-cyan transition-colors hover:bg-cyan hover:text-ink"
+            href="#diagnostico"
+          >
+            Mapear riscos
+          </a>
+        </nav>
+
+        <button
+          id="menu-button"
+          class="grid h-11 w-11 place-items-center rounded-sm border border-white/15 text-white md:hidden"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Abrir menu"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path class="menu-line menu-line-top" d="M4 8H20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+            <path class="menu-line menu-line-bottom" d="M4 16H20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <nav id="mobile-menu" class="mobile-menu site-shell border-t border-white/10 md:hidden" aria-label="Navegação móvel" aria-hidden="true" inert>
+        <div class="grid gap-1 py-5">
+          <a class="rounded-sm px-4 py-3 text-mist hover:bg-white/5 hover:text-cyan" href="#riscos">Riscos</a>
+          <a class="rounded-sm px-4 py-3 text-mist hover:bg-white/5 hover:text-cyan" href="#abordagem">Como protegemos</a>
+          <a class="rounded-sm px-4 py-3 text-mist hover:bg-white/5 hover:text-cyan" href="#sobre">INOVARIS</a>
+          <a class="mt-2 rounded-sm bg-cyan px-4 py-3 text-center font-semibold text-ink" href="#diagnostico">Mapear riscos</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="conteudo">
+      <section id="inicio" class="h-dvh overflow-hidden border-b border-cyan/15" aria-labelledby="hero-title">
+        <div class="hero-frame relative h-full overflow-hidden bg-ink">
+          <canvas id="security-field" class="security-field" aria-hidden="true"></canvas>
+
+          <div class="hero-brand" aria-label="INOVARIS — Segurança digital em ambientes industriais">
+            <div class="text-center">
+              <p class="hero-brand-word text-5xl sm:text-6xl lg:text-8xl">INOVARIS</p>
+              <p class="hero-brand-expansion text-xs sm:text-sm md:text-base lg:text-lg">Segurança digital em ambientes industriais</p>
+            </div>
+          </div>
+
+          <div class="absolute inset-x-0 bottom-0 z-10 pb-[max(2rem,env(safe-area-inset-bottom))] md:pb-10">
+            <div class="hero-copy site-shell grid gap-7 md:grid-cols-[1fr_auto] md:items-end md:gap-10">
+              <div>
+                <h1 id="hero-title" class="max-w-2xl font-display text-4xl font-semibold leading-[1.02] tracking-[-0.035em] sm:text-5xl md:text-4xl lg:text-5xl">
+                  Segurança que continua operando quando o risco muda.
+                </h1>
+                <p class="mt-4 max-w-xl text-base leading-7 text-mist md:text-lg">
+                  Estratégia, vigilância e resposta para preservar dados, acessos e continuidade.
+                </p>
+              </div>
+              <a class="hero-cta group flex w-fit shrink-0 items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-cyan" href="#riscos">
+                <span class="hidden sm:inline">Explorar a superfície de risco</span>
+                <span class="sm:hidden">Explorar riscos</span>
+                <span class="grid h-9 w-9 place-items-center rounded-sm border border-cyan/45 transition-colors group-hover:bg-cyan group-hover:text-ink">
+                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-b border-white/10 py-12 md:py-16" aria-label="Proposta de valor">
+        <div class="site-shell grid gap-7 md:grid-cols-[1.3fr_0.7fr] md:items-end">
+          <p class="max-w-4xl font-display text-3xl font-medium leading-tight tracking-[-0.03em] text-white md:text-5xl">
+            Proteger uma empresa exige enxergar o que acontece <span class="text-cyan">antes</span>, agir durante e preservar a operação depois.
+          </p>
+          <p class="max-w-md border-t border-cyan/30 pt-5 text-base leading-7 text-mist md:justify-self-end">
+            A INOVARIS conecta contexto, análise e resposta para transformar sinais dispersos em decisões de segurança.
+          </p>
+        </div>
+      </section>
+
+      <section id="riscos" class="signal-grid scroll-mt-20 py-20 md:py-28" aria-labelledby="riscos-title">
+        <div class="site-shell">
+          <div class="grid gap-6 md:grid-cols-[0.75fr_1.25fr] md:items-end">
+            <h2 id="riscos-title" class="max-w-lg font-display text-4xl font-semibold leading-[1.04] tracking-[-0.035em] md:text-6xl">
+              O risco não chega com um único formato.
+            </h2>
+            <p class="max-w-2xl text-lg leading-8 text-mist md:justify-self-end">
+              Cada ameaça deixa sinais diferentes. Selecione um vetor para entender o impacto e a resposta necessária.
+            </p>
+          </div>
+
+          <div class="risk-console relative mt-12 overflow-hidden rounded-sm border border-cyan/20 bg-navy/90 shadow-[0_28px_80px_-36px_rgba(91,155,213,0.42)] md:mt-16">
+            <div class="grid md:grid-cols-[1fr_1.05fr]">
+              <div class="border-b border-white/10 md:border-b-0 md:border-r">
+                <div class="flex items-center justify-between border-b border-white/10 px-5 py-4 font-mono text-[0.68rem] uppercase tracking-[0.15em] text-mist/75 md:px-7">
+                  <span>Superfície monitorada</span>
+                  <span class="inline-flex items-center gap-2 text-cyan"><span class="h-1.5 w-1.5 rounded-full bg-cyan"></span> Ativa</span>
+                </div>
+
+                <div id="risk-list" role="group" aria-label="Vetores de risco" class="divide-y divide-white/10">
+                  <button class="risk-button flex w-full items-center gap-4 px-5 py-5 text-left transition-colors hover:bg-white/[0.04] md:px-7" type="button" data-risk="leak" aria-pressed="true">
+                    <span class="risk-dot h-2 w-2 shrink-0 rounded-full bg-white/25 transition-all"></span>
+                    <span class="flex-1 font-display text-lg font-medium">Vazamento de dados</span>
+                    <span class="risk-status font-mono text-[0.65rem] uppercase tracking-[0.12em] text-mist/60">Analisar</span>
+                  </button>
+                  <button class="risk-button flex w-full items-center gap-4 px-5 py-5 text-left transition-colors hover:bg-white/[0.04] md:px-7" type="button" data-risk="ransomware" aria-pressed="false">
+                    <span class="risk-dot h-2 w-2 shrink-0 rounded-full bg-white/25 transition-all"></span>
+                    <span class="flex-1 font-display text-lg font-medium">Ataques de ransomware</span>
+                    <span class="risk-status font-mono text-[0.65rem] uppercase tracking-[0.12em] text-mist/60">Analisar</span>
+                  </button>
+                  <button class="risk-button flex w-full items-center gap-4 px-5 py-5 text-left transition-colors hover:bg-white/[0.04] md:px-7" type="button" data-risk="failures" aria-pressed="false">
+                    <span class="risk-dot h-2 w-2 shrink-0 rounded-full bg-white/25 transition-all"></span>
+                    <span class="flex-1 font-display text-lg font-medium">Falhas de segurança</span>
+                    <span class="risk-status font-mono text-[0.65rem] uppercase tracking-[0.12em] text-mist/60">Analisar</span>
+                  </button>
+                  <button class="risk-button flex w-full items-center gap-4 px-5 py-5 text-left transition-colors hover:bg-white/[0.04] md:px-7" type="button" data-risk="access" aria-pressed="false">
+                    <span class="risk-dot h-2 w-2 shrink-0 rounded-full bg-white/25 transition-all"></span>
+                    <span class="flex-1 font-display text-lg font-medium">Acessos não autorizados</span>
+                    <span class="risk-status font-mono text-[0.65rem] uppercase tracking-[0.12em] text-mist/60">Analisar</span>
+                  </button>
+                  <button class="risk-button flex w-full items-center gap-4 px-5 py-5 text-left transition-colors hover:bg-white/[0.04] md:px-7" type="button" data-risk="loss" aria-pressed="false">
+                    <span class="risk-dot h-2 w-2 shrink-0 rounded-full bg-white/25 transition-all"></span>
+                    <span class="flex-1 font-display text-lg font-medium">Perda de dados</span>
+                    <span class="risk-status font-mono text-[0.65rem] uppercase tracking-[0.12em] text-mist/60">Analisar</span>
+                  </button>
+                </div>
+              </div>
+
+              <div id="risk-detail" class="risk-detail flex min-h-[34rem] flex-col justify-between p-7 md:p-10" aria-live="polite">
+                <div>
+                  <div class="flex items-center justify-between font-mono text-[0.68rem] uppercase tracking-[0.15em] text-mist/70">
+                    <span>Vetor selecionado</span>
+                    <span id="risk-code">RISCO / 01</span>
+                  </div>
+                  <h3 id="risk-title" class="mt-12 max-w-md font-display text-3xl font-semibold tracking-[-0.03em] md:text-4xl">Dados fora do perímetro</h3>
+                  <p id="risk-copy" class="mt-5 max-w-xl text-base leading-7 text-mist">
+                    Informações sensíveis podem sair por credenciais expostas, compartilhamentos incorretos ou integrações sem controle.
+                  </p>
+                </div>
+                <div class="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-sm bg-white/10">
+                  <div class="bg-panel p-4">
+                    <span class="font-mono text-[0.62rem] uppercase tracking-[0.13em] text-cyan">Prioridade</span>
+                    <p id="risk-priority" class="mt-2 text-sm text-white">Visibilidade e controle</p>
+                  </div>
+                  <div class="bg-panel p-4">
+                    <span class="font-mono text-[0.62rem] uppercase tracking-[0.13em] text-[#8FB5D9]">Resposta</span>
+                    <p id="risk-response" class="mt-2 text-sm text-white">Conter e rastrear</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="abordagem" class="scroll-mt-20 border-y border-white/10 bg-[#0C1119] py-20 md:py-28" aria-labelledby="abordagem-title">
+        <div class="site-shell">
+          <div class="max-w-3xl">
+            <h2 id="abordagem-title" class="font-display text-4xl font-semibold leading-[1.05] tracking-[-0.035em] md:text-6xl">
+              Da visibilidade à continuidade.
+            </h2>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-mist">
+              Uma abordagem conectada para reduzir exposição, acelerar decisões e manter a empresa em movimento.
+            </p>
+          </div>
+
+          <ol class="relative mt-16 grid gap-10 md:grid-cols-3 md:gap-8">
+            <li class="process-stage relative pt-8 md:pt-12">
+              <div class="absolute left-0 top-0 h-px w-full bg-white/15" aria-hidden="true"><span class="stage-line block h-px w-1/3"></span></div>
+              <span class="font-mono text-xs text-cyan">01 — DETECTAR</span>
+              <h3 class="mt-6 font-display text-2xl font-semibold">Sinais com contexto</h3>
+              <p class="mt-4 max-w-sm leading-7 text-mist">Identificar comportamentos, exposições e eventos que merecem atenção antes que se tornem incidentes.</p>
+            </li>
+            <li class="process-stage relative pt-8 md:pt-12">
+              <div class="absolute left-0 top-0 h-px w-full bg-white/15" aria-hidden="true"><span class="stage-line block h-px w-2/3"></span></div>
+              <span class="font-mono text-xs text-cyan">02 — CONTER</span>
+              <h3 class="mt-6 font-display text-2xl font-semibold">Ação coordenada</h3>
+              <p class="mt-4 max-w-sm leading-7 text-mist">Priorizar o que importa, limitar o alcance da ameaça e orientar a resposta com clareza operacional.</p>
+            </li>
+            <li class="process-stage relative pt-8 md:pt-12">
+              <div class="absolute left-0 top-0 h-px w-full bg-white/15" aria-hidden="true"><span class="stage-line block h-px w-full"></span></div>
+              <span class="font-mono text-xs text-cyan">03 — RECUPERAR</span>
+              <h3 class="mt-6 font-display text-2xl font-semibold">Operação resiliente</h3>
+              <p class="mt-4 max-w-sm leading-7 text-mist">Restabelecer dados e serviços com segurança, aprendendo com cada evento para fortalecer o próximo ciclo.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="sobre" class="scroll-mt-20 py-20 md:py-28" aria-labelledby="sobre-title">
+        <div class="site-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div>
+            <h2 id="sobre-title" class="font-display text-4xl font-semibold leading-[1.05] tracking-[-0.035em] md:text-6xl">
+              Segurança é uma capacidade de negócio.
+            </h2>
+            <p class="mt-7 max-w-xl text-lg leading-8 text-mist">
+              A INOVARIS aproxima tecnologia e operação para que a segurança acompanhe as decisões da empresa — sem perder de vista pessoas, dados e continuidade.
+            </p>
+          </div>
+
+          <dl class="divide-y divide-white/10 border-y border-white/10">
+            <div class="definition-row grid gap-2 py-6 sm:grid-cols-[10rem_1fr]">
+              <dt class="font-mono text-xs uppercase tracking-[0.12em] text-cyan">Informação</dt>
+              <dd class="leading-7 text-mist">Contexto confiável para decidir e priorizar.</dd>
+            </div>
+            <div class="definition-row grid gap-2 py-6 sm:grid-cols-[10rem_1fr]">
+              <dt class="font-mono text-xs uppercase tracking-[0.12em] text-cyan">Operações</dt>
+              <dd class="leading-7 text-mist">Processos claros para agir com consistência.</dd>
+            </div>
+            <div class="definition-row grid gap-2 py-6 sm:grid-cols-[10rem_1fr]">
+              <dt class="font-mono text-xs uppercase tracking-[0.12em] text-cyan">Vigilância</dt>
+              <dd class="leading-7 text-mist">Atenção contínua aos sinais que mudam o cenário.</dd>
+            </div>
+            <div class="definition-row grid gap-2 py-6 sm:grid-cols-[10rem_1fr]">
+              <dt class="font-mono text-xs uppercase tracking-[0.12em] text-cyan">Análise</dt>
+              <dd class="leading-7 text-mist">Risco traduzido em ação objetiva.</dd>
+            </div>
+            <div class="definition-row grid gap-2 py-6 sm:grid-cols-[10rem_1fr]">
+              <dt class="font-mono text-xs uppercase tracking-[0.12em] text-cyan">Resiliência</dt>
+              <dd class="leading-7 text-mist">Preparação para manter e recuperar a operação.</dd>
+            </div>
+            <div class="definition-row grid gap-2 py-6 sm:grid-cols-[10rem_1fr]">
+              <dt class="font-mono text-xs uppercase tracking-[0.12em] text-cyan">Inovação</dt>
+              <dd class="leading-7 text-mist">Tecnologia aplicada à evolução da proteção.</dd>
+            </div>
+            <div class="definition-row grid gap-2 py-6 sm:grid-cols-[10rem_1fr]">
+              <dt class="font-mono text-xs uppercase tracking-[0.12em] text-cyan">Segurança</dt>
+              <dd class="leading-7 text-mist">Proteção integrada às decisões e à continuidade do negócio.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="diagnostico" class="scroll-mt-20 px-4 pb-20 md:pb-28" aria-labelledby="diagnostico-title">
+        <div class="diagnostic-panel mx-auto max-w-[80rem] overflow-hidden rounded-sm bg-[linear-gradient(120deg,#10141C,#171C26_52%,#0F2E4A)] shadow-[0_32px_90px_-38px_rgba(46,94,140,0.7)]">
+          <div class="grid lg:grid-cols-[0.82fr_1.18fr]">
+            <div class="p-7 md:p-12 lg:p-14">
+              <h2 id="diagnostico-title" class="font-display text-4xl font-semibold leading-[1.05] tracking-[-0.035em] md:text-5xl">Como está a proteção da sua empresa?</h2>
+              <p class="mt-6 max-w-lg text-lg leading-8 text-mist">Confira cinco práticas essenciais e veja o que já está em dia, o que precisa avançar e o que falta verificar.</p>
+              <p class="mt-5 text-sm leading-6 text-mist">Responda com base na situação atual. Se não tiver certeza, escolha “Não sei”.</p>
+              <div id="assessment-empty" class="mt-10 border-t border-white/15 pt-6">
+                <svg class="text-cyan" width="48" height="40" viewBox="0 0 48 40" fill="none" aria-hidden="true"><path d="M5 3V35H45M13 26H25M13 17H34M13 8H43" stroke="currentColor" stroke-width="3" /></svg>
+                <p class="mt-4 font-semibold">Suas respostas viram um panorama visual.</p>
+                <p class="mt-2 text-sm leading-6 text-mist">Preencha as cinco práticas para comparar a quantidade em cada situação.</p>
+              </div>
+              <div id="assessment-result" class="mt-10 hidden border-t border-white/15 pt-6" tabindex="-1" aria-labelledby="assessment-chart-title">
+                <h3 id="assessment-chart-title" class="font-display text-2xl font-semibold">Panorama das suas práticas</h3>
+                <div id="risk-level-panel" class="mt-5 flex items-start gap-4 rounded-sm border border-white/15 p-4">
+                  <span id="risk-level-badge" class="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-mono text-xs font-semibold uppercase tracking-[0.04em]" aria-hidden="true"></span>
+                  <div>
+                    <p class="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-mist/80">Nível de risco estimado</p>
+                    <p id="risk-level-title" class="mt-1 font-display text-xl font-semibold text-white"></p>
+                    <p id="risk-level-summary" class="mt-1 text-sm leading-6 text-mist"></p>
+                  </div>
+                </div>
+                <p id="assessment-chart-note" class="mt-7 text-sm leading-6 text-mist">Quantidade de práticas por resposta · 5 no total</p>
+                <ul id="assessment-chart" class="mt-6 space-y-5" aria-describedby="assessment-chart-note"></ul>
+                <p class="mt-6 text-sm leading-6 text-mist">Esta é uma estimativa baseada nas respostas informadas e não substitui uma avaliação técnica completa.</p>
+              </div>
+            </div>
+            <form id="assessment-form" class="bg-white/[0.055] p-7 md:p-12 lg:p-14">
+              <fieldset>
+                <legend class="font-display text-xl font-semibold">Quais práticas já fazem parte da rotina?</legend>
+                <div class="mt-4 divide-y divide-white/10">
+                <div class="assessment-question">
+                  <label for="practice-access"><span class="block font-semibold text-white">Acessos protegidos</span><span class="mt-1 block text-sm leading-6 text-mist">A empresa usa autenticação em duas etapas nos acessos importantes?</span></label>
+                  <select id="practice-access" name="access" required class="assessment-select"><option value="" disabled selected>Selecione</option><option value="yes">Sim</option><option value="partial">Em parte</option><option value="no">Não</option><option value="unknown">Não sei</option></select>
+                </div>
+                <div class="assessment-question">
+                  <label for="practice-backup"><span class="block font-semibold text-white">Backups verificados</span><span class="mt-1 block text-sm leading-6 text-mist">Os backups são feitos regularmente e a recuperação já foi testada?</span></label>
+                  <select id="practice-backup" name="backup" required class="assessment-select"><option value="" disabled selected>Selecione</option><option value="yes">Sim</option><option value="partial">Em parte</option><option value="no">Não</option><option value="unknown">Não sei</option></select>
+                </div>
+                <div class="assessment-question">
+                  <label for="practice-updates"><span class="block font-semibold text-white">Sistemas atualizados</span><span class="mt-1 block text-sm leading-6 text-mist">Sistemas e dispositivos recebem atualizações de segurança?</span></label>
+                  <select id="practice-updates" name="updates" required class="assessment-select"><option value="" disabled selected>Selecione</option><option value="yes">Sim</option><option value="partial">Em parte</option><option value="no">Não</option><option value="unknown">Não sei</option></select>
+                </div>
+                <div class="assessment-question">
+                  <label for="practice-people"><span class="block font-semibold text-white">Equipe preparada</span><span class="mt-1 block text-sm leading-6 text-mist">A equipe recebe orientação para reconhecer golpes e mensagens suspeitas?</span></label>
+                  <select id="practice-people" name="people" required class="assessment-select"><option value="" disabled selected>Selecione</option><option value="yes">Sim</option><option value="partial">Em parte</option><option value="no">Não</option><option value="unknown">Não sei</option></select>
+                </div>
+                <div class="assessment-question">
+                  <label for="practice-response"><span class="block font-semibold text-white">Resposta a incidentes</span><span class="mt-1 block text-sm leading-6 text-mist">Existe um plano definido para agir em caso de incidente?</span></label>
+                  <select id="practice-response" name="response" required class="assessment-select"><option value="" disabled selected>Selecione</option><option value="yes">Sim</option><option value="partial">Em parte</option><option value="no">Não</option><option value="unknown">Não sei</option></select>
+                </div>
+                </div>
+              </fieldset>
+              <button type="submit" class="primary-action mt-7 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-sm bg-cyan px-6 font-semibold text-ink transition-colors hover:bg-white sm:w-auto">Gerar gráfico
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 3V15H15M6 11H10M6 7H14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" /></svg>
+              </button>
+              <p id="assessment-status" class="mt-4 text-sm leading-6 text-mist" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10 py-10">
+      <div class="site-shell flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div>
+          <a href="#inicio" class="font-display text-xl font-semibold tracking-[0.2em]">INOVARIS</a>
+          <p class="mt-3 max-w-2xl text-sm leading-6 text-mist/80">
+            Segurança digital em ambientes industriais.
+          </p>
+        </div>
+        <p class="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-mist/55">© 2026 INOVARIS. Todos os direitos reservados</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
